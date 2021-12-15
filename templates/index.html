@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Hola {{ username }}</h2>
+    <p>
+        Te encuentras en el curso de <b> {{ nombre_curso }} </b>
+    </p>
+
+    {% if premium %}
+        <p>
+            El curso es premium
+        </p>
+    {% else %}
+        <p>
+            El curso es gratuito para todo el mundo.
+        </p>
+    {% endif %}
+
+    {% if cursos %}
+        <p>Listado de cursos: </p>
+        <ul>
+            {% for curso in cursos %}
+                <li>
+                    {{ curso }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <img src="{{ url_for('static', filename='images/husky.jpg') }}" alt="">
+
+{% endblock%}

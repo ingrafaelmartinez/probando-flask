@@ -1,0 +1,14 @@
+
+<head>
+    <title>Suma dos números</title>
+</head>
+
+{% extends 'base.html'%}
+
+{% block content %}
+    
+    <p>
+        La suma de {{ val1 }} + {{ val2 }} es: <b> {{ funcion(val1, val2) }} </b>
+    </p>
+
+{% endblock %}
